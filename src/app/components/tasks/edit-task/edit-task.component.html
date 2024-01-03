@@ -1,0 +1,66 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Task</h1>
+
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="updateTask()">
+
+                <!--
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id" readonly
+                    [(ngModel)]="tasksDetails.id" name="id" >
+                  </div>
+                  -->
+
+                <div class="mb-3">
+                    <label for="taskAuthor" class="form-label">Task Author</label>
+                    <input type="text" class="form-control" id="taskAuthor" 
+                    [(ngModel)]="tasksDetails.taskAuthor" name="taskAuthor" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="taskDescription" class="form-label">Task Description</label>
+                    <input type="text" class="form-control" id="taskDescription" 
+                    [(ngModel)]="tasksDetails.taskDescription" name="taskDescription" >
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save</button> 
+                  
+                  
+                  <button type="button" class="btn btn-link" [routerLink]="['/tasks']">Back To Tasks</button>
+                  
+                  <button type="button" class="btn btn-danger"
+                  (click)="deleteTask(tasksDetails.id)">Delete</button> 
+
+                  <p *ngIf="errorMesage">{{errorMesage}}</p>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+ 
+<!--  
+   <div class="row">
+    <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="addTask()">
+           <div class="mb-3">
+              <label for="taskAuthor" class="form-label">Task Author</label>
+              <input type="text" class="form-control" id="taskAuthor" 
+              [(ngModel)]="addTaskRequest.taskAuthor" taskAuthor="taskAuthor" >
+            </div>
+            <div class="mb-3">
+                  <label for="taskDescription" class="form-label">Task Description</label>
+                  <input type="text" class="form-control" id="taskDescription" taskDescription="taskDescription"
+                  [(ngModel)]="addTaskRequest.taskDescription">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>          
+        </form>
+    </div>
+   </div>
+</div>
+
+
+-->
